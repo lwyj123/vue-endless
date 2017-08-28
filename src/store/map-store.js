@@ -7,7 +7,9 @@ const state = {
 }
 
 const mutations = {
-
+  SET_MAP: (state, map) => {
+    state.map = map
+  },
 }
 
 export default {

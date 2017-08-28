@@ -33,11 +33,11 @@ export default {
     }
   },
   created (){
-
+    this.$store.commit('SET_MAP', null);
   },
   methods : {
     goTo (map){
-      this.$store.state.MapStore.map = new MapInit(map);
+      this.$store.commit('SET_MAP', new MapInit(map));
       location.href = '#/map-active';
     }
   }

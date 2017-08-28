@@ -68,7 +68,7 @@ export default {
     }
   },
   created (){
-    this.map = new MapInit(this.$store.state.MapStore.mapList[0])
+    this.map = this.$store.state.MapStore.map;
     // this.map = this.$store.state.MapStore.map;
     this.moveEvent = new HeroMoveEvent(this.map, this);
     setTimeout(() => {
