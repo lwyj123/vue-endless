@@ -21,7 +21,8 @@ export default {
     'game-home-info' : Info
   },
   created(){
-    if(!this.$store.state.HeroStore.hero){
+    console.log(this.$store.state)
+    if(!this.$store.state.hero.hero){
       this.$router.push('/login');
     }
     // new GameAudio({

@@ -2,7 +2,7 @@ import store from '../store'
 import PGET from 'utils/public-static-get';
 
 const BluePrint = function(opt){
-  let hero = store.state.HeroStore.hero;
+  let hero = store.state.hero.hero;
   let result = {
     success : false,
     msg : ''

@@ -29,7 +29,7 @@ export default {
   },
   computed :{
     mapList : function(){
-      return this.$store.state.MapStore.mapList;
+      return this.$store.state.map.mapList;
     }
   },
   created (){

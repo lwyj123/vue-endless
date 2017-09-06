@@ -52,7 +52,7 @@ export default {
     this.index = Number(record[1]);
     this.dropData = {
       position : this.positionIndex,
-      hero : this.$store.state.HeroStore.hero,
+      hero : this.$store.state.hero.hero,
     }
   },
   watch:{

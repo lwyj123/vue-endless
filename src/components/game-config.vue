@@ -63,7 +63,7 @@ export default {
     }
   },
   created(){
-    this.option = this.$store.state.ConfigStore;
+    this.option = this.$store.state.config;
     // LoadGame();
   },
   methods:{

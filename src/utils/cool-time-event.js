@@ -2,7 +2,7 @@ import store from '../store';
 
 const coolTimeEvent = function(currentCoolTime){
 
-  let hero = store.state.HeroStore.hero;
+  let hero = store.state.hero.hero;
 
   currentCoolTime = Math.max(1000, (1 - hero.$r.$coolTimePer / 100) * (currentCoolTime || this.defaultTime));
 

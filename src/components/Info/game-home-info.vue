@@ -51,7 +51,7 @@ export default {
       'hero',
     ]),
     hero: function(){
-      return this.$store.state.HeroStore.hero;
+      return this.$store.state.hero.hero;
     }
   },
   watch:{

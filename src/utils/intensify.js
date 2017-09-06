@@ -110,7 +110,7 @@ const Intensify = function(item){
   // 计算是否符合强化要求;
   let validate = {
     type : [],
-    good : [store.state.HeroStore.hero],
+    good : [store.state.hero.hero],
   };
 
   for(let key in validate){

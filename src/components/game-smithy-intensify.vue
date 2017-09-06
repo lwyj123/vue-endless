@@ -29,7 +29,7 @@ export default {
   },
   computed :{
     item : function(){
-      return this.$store.state.SmithyStore.intensifyItem;
+      return this.$store.state.smithy.intensifyItem;
     }
   },
   created(){

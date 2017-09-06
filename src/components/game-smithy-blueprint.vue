@@ -61,12 +61,12 @@ export default {
   },
   computed :{
     blueprintList : function(){
-      return this.$store.state.HeroStore.hero.$blueprint.map(function(k){
+      return this.$store.state.hero.hero.$blueprint.map(function(k){
         return PGET(k);
       });
     },
     hero : function(){
-      return this.$store.state.HeroStore.hero;
+      return this.$store.state.hero.hero;
     }
   },
   created(){

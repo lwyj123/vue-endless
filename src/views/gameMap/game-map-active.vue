@@ -68,8 +68,8 @@ export default {
     }
   },
   created (){
-    this.map = this.$store.state.MapStore.map;
-    // this.map = this.$store.state.MapStore.map;
+    this.map = this.$store.state.map.map;
+    // this.map = this.$store.state.map.map;
     this.moveEvent = new HeroMoveEvent(this.map, this);
     setTimeout(() => {
       this.$delete(this.opt, 'tip')

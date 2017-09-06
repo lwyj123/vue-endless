@@ -15,8 +15,8 @@ const SaveGame = function(){
   // config
   // store.state.HeroStore.hero = hero;
 
-  let hero = _.cloneDeep(store.state.HeroStore.hero);
-  let config = _.cloneDeep(store.state.ConfigStore);
+  let hero = _.cloneDeep(store.state.hero.hero);
+  let config = _.cloneDeep(store.state.config);
 
   hero.__proto__ = {};
   
@@ -85,7 +85,7 @@ const LoadGame = function(){
       })
     }
 
-    Vue.set(store.state.HeroStore,'hero', new Unit(hero));
+    Vue.set(store.state.hero,'hero', new Unit(hero));
     store.commit('ConfigUpdate', config);
   }else{
     // 生成默认测试英雄
@@ -110,7 +110,7 @@ const LoadGame = function(){
         $package : [test1,test2].concat(_.cloneDeep(ITEM_TABLE).slice(2)).concat(new Array(26))
       }
     );
-    Vue.set(store.state.HeroStore,'hero', hero);
+    Vue.set(store.state.hero,'hero', hero);
   }
 
   SaveGame();

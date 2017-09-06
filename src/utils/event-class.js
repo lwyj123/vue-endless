@@ -140,7 +140,7 @@ const MapDialog = function(event, callback){
         btn.action = function(){
           let need = opt.need || [];
           let get = opt.get || [];
-          let unit = this.$store.state.HeroStore.hero;
+          let unit = this.$store.state.hero.hero;
           let enough = unit.isEnoughInPackage(need);
           if(!enough){
             this.$i = i[0]
