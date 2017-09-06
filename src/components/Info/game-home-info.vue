@@ -6,7 +6,7 @@
           <img :src="require('assets/hero-1.png')"/>
           <div class="level">99</div>
         </div>
-        <div class="name">Bastarder</div>
+        <div class="name">{{ user.name }}</div>
       </div>
       <div class="equip">
         <div class="left">
@@ -37,7 +37,7 @@
 </template>
 
 <script>
-
+import { mapGetters } from 'vuex';
 
 export default {
   data () {
@@ -46,6 +46,10 @@ export default {
     }
   },
   computed:{
+    ...mapGetters([
+      'user',
+      'hero',
+    ]),
     hero: function(){
       return this.$store.state.HeroStore.hero;
     }
