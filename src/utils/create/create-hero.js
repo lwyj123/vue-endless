@@ -1,4 +1,4 @@
-import { EXP_TABLE } from "../data/hero-data";
+import { EXP_TABLE } from "data/hero-data";
 
 const CreateHero = function(option = {}){
 

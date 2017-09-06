@@ -1,10 +1,10 @@
-import { EXP_TABLE } from "../data/hero-data";
-import SKILL_TABLE from "../data/skill-data";
-import STATE_TABLE from "../data/state-data";
-import { ITEM_TABLE } from "../data/item-data";
+import { EXP_TABLE } from "data/hero-data";
+import SKILL_TABLE from "data/skill-data";
+import STATE_TABLE from "data/state-data";
+import { ITEM_TABLE } from "data/item-data";
 import store from '../store';
-import CreateMonster from './create-monster';
-import CreateHero from './create-hero';
+import CreateMonster from './create/create-monster';
+import CreateHero from './create/create-hero';
 import { GetRange, GetRandom } from './public-random-range';
 import PGET from 'utils/public-static-get';
 import coolTimeEvent from './cool-time-event';

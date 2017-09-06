@@ -1,4 +1,5 @@
-import PublicStaticGet from './public-static-get'
+// TODO: needed to be modified 
+import PublicStaticGet from './../public-static-get'
 
 const CreateMonster = function(opt = {}){
 
