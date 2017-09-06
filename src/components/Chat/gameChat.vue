@@ -1,6 +1,6 @@
 <template>
   <div class="game-chat">
-    <header></header>
+    <header v-moveable="'.game-chat'"></header>
     <div class="chat-window"></div>
     <div class="chat-input">
       <input>
@@ -11,11 +11,14 @@
 
 <script>
 import { mapGetters } from 'vuex'
-
+import moveable from 'directive/moveable'
 export default {
   props: [
     
   ],
+  directives :{
+    'moveable' : moveable,
+  },
   data(){
     return {
       keke: 'eke'
