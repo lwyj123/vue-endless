@@ -8,6 +8,7 @@
       <game-house></game-house>
       <game-package></game-package>
     </div>
+    <game-chat></game-chat>
   </div>
 </template>
 
@@ -15,10 +16,12 @@
 import Menu from 'components/Menu/game-home-menu.vue'
 import Info from 'components/Info/game-home-info.vue'
 import GameAudio from 'utils/audio'
+import GameChat from 'components/Chat/gameChat.vue'
 export default {
   components :{
     'game-home-menu' : Menu,
-    'game-home-info' : Info
+    'game-home-info' : Info,
+    'game-chat': GameChat,
   },
   created(){
     console.log(this.$store.state)

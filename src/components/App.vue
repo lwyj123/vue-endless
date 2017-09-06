@@ -50,27 +50,28 @@ export default {
   }
 </style>
 
-<style scoped lang="less">
- .container{
+<style scoped lang="scss">
+  @import './../styles/index.scss'; // 全局自定义的css样式
+  .container{
    margin: auto;
    width: 800px;
    border-radius: 2px;
    height: 500px;
- }
- .main{
+  }
+  .main{
    display: inline-block;
    width: 100%;
    height: 100%;
- }
- .router-view{
+  }
+  .router-view{
    position: relative;
    height: 500px;
    background: #252830;
    border-radius: 2px;
- }
- .router-view > div{
+  }
+  .router-view > div{
    position: absolute;
    height: 100%;
    width: 100%;
- }
+  }
 </style>
