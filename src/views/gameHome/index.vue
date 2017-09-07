@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 import Menu from 'components/Menu/game-home-menu.vue'
 import Info from 'components/Info/game-home-info.vue'
 import GameAudio from 'utils/audio'
@@ -23,6 +24,16 @@ export default {
     'game-home-info' : Info,
     'game-chat': GameChat,
   },
+  data() {
+    return {
+      
+    }
+  },
+  computed:{
+    ...mapGetters([
+      'user',
+    ]),
+  },
   created(){
     console.log(this.$store.state)
     if(!this.$store.state.hero.hero){
@@ -32,6 +43,8 @@ export default {
     //   key : 'backgroundMusic',
     //   loop : true,
     // });
+  },
+  methods: {
   }
 }
 

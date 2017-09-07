@@ -3,7 +3,9 @@
     <header class="moveable" v-moveable="'.game-chat'">
       <h1>Game Chat</h1>
     </header>
-    <div class="chat-window"></div>
+    <div class="chat-window">
+      <p v-for="(item, index) in chatlog">{{ item.content }}</p>
+    </div>
     <div class="chat-input">
       <input>
       <button>Send</button>
@@ -21,13 +23,38 @@ export default {
   directives :{
     'moveable' : moveable,
   },
-  data(){
+  data() {
     return {
-      keke: 'eke'
+      chatlog: [],
     }
   },
+  computed:{
+    ...mapGetters([
+      'user',
+    ]),
+  },
   methods : {
-  }
+  },
+  sockets:{
+    connect: function(){
+      var self = this;
+      console.log('socket connected');
+      this.$socket.emit('login', this.user)
+    },
+    logined: function(user){
+      console.log(`user logined`);
+      this.chatlog.push({
+        type: 'welcome',
+        content: `welcome ${user.name} join the chat`
+      });
+    },
+    message: function(message) {
+      if(message.type === 'message' && message.user.id === user.id) {
+        return;
+      }
+      this.chatlog.push(message);
+    },
+  },
 }
 </script>
 

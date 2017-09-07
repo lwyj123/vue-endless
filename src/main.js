@@ -33,6 +33,10 @@ Vue.component('game-skill-item', GameSkillItem)
 Vue.component('game-state-item', GameStateItem)
 Vue.component('component-item', ComponentItem)
 
+// add socket.IO
+import VueSocketio from 'vue-socket.io';
+Vue.use(VueSocketio, 'http://localhost:3000');
+
 Vue.config.errorHandler = function (err, vm) {
   console.warn(err,vm);
   router.replace('/');
