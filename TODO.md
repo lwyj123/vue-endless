@@ -1,5 +1,5 @@
 # planning
-1. add new feature: add chat in game layout
+1. new random dungon-creater
 2. use ddecorator for monster's prename
 
 # feature
@@ -8,3 +8,4 @@
 3. modify create creature part.
 4. delete `css` folder and add the style into `styles` folder
 5. optimize chatlog scroll
+6. connect the socketIO server only when gameChat mounted.

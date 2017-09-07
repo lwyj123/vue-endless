@@ -1,5 +1,5 @@
 import DungeonCreater from 'utils/dungeon-creater';
-import CONSTANT from '../data/constant';
+import CONSTANT from 'data/constant';
 import PGET from 'utils/public-static-get';
 
 let blockType = CONSTANT.MAP_BLOCK_TYPE;
