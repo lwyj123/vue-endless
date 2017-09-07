@@ -5,15 +5,22 @@
     </header>
     <div class="chat-window">
       <ul ref="messages" class="messages">
-        <li v-for="(item, index) in chatlog"
-            :class="{me: false}">
-          <div class="name">{{ item.user && item.user.id || 'lwio' }}</div>
-          <span>{{ item.content }}</span>
+        <li v-for="(item, index) in chatlog">
+          <div v-if="item.type === 'message'" 
+               class="chat-line"
+               :class="{me: item.content.from.id === user.id}">
+            <div class="name">{{ item.content.from.name }}</div>
+            <span>{{ item.content.message }}</span>
+          </div>
+          <div v-else-if="item.type === 'welcome'"
+               class="notice-line">
+            <span>{{ item.content }}</span>
+          </div>
         </li>
       </ul>
     </div>
     <div class="chat-input">
-      <input v-model="content">
+      <input v-model="messageInput">
       <button @click="sendChatMessage">Send</button>
     </div>
   </div>
@@ -32,17 +39,11 @@ export default {
   data() {
     return {
       chatlog: [],
-      content: '',
+      messageInput: '',
     }
   },
   created() {
     var self = this;
-    setInterval(function() {
-      self.chatlog.push({
-        type: 'message',
-        content: 'fvck',
-      })
-    }, 2000)
   },
   computed:{
     ...mapGetters([
@@ -54,13 +55,19 @@ export default {
       var self = this;
       this.$socket.emit('message', {
         type: 'message',
-        content: self.content,
+        content: { 
+          from: this.user,
+          message: self.messageInput,
+        }
       })
       this.chatlog.push({
         type: 'message',
-        content: self.content,
+        content: { 
+          from: this.user,
+          message: self.messageInput,
+        }
       }) 
-      this.content = '';
+      this.messageInput = '';
     }
   },
   sockets:{
@@ -77,7 +84,7 @@ export default {
       });
     },
     message: function(message) {
-      if(message.type === 'message' && message.user.id === user.id) {
+      if(message.type === 'message' && message.content.from.id === this.user.id) {
         return;
       }
       this.chatlog.push(message);
@@ -136,22 +143,34 @@ export default {
 ul.messages {
   li {
     margin-bottom: 10px;
-    .name {
-      margin-bottom: 5px;
+    .chat-line {
+      .name {
+        margin-bottom: 5px;
 
-      color: white;
-      font-size: 12px;
-      font-weight: bold;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+      }
+      span {
+        border-radius: 5px;
+        background: #E0EDFF;
+        padding: 5px 12px;
+        font-size: 15px;
+      }
     }
-    span {
-      border-radius: 5px;
-      background: #E0EDFF;
-      padding: 5px 12px;
-      font-size: 15px;
+    .chat-line.me {
+      text-align: right;
     }
-  }
-  li.me {
 
+    .notice-line {
+      margin: 10px 0;
+      text-align: center;
+      span {
+        background: #aaaaaa;
+        border-radius: 4px;
+        padding: 5px 20px;
+      }
+    }
   }
 }
 

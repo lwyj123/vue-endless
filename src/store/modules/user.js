@@ -1,6 +1,7 @@
 const user = {
   state: false || {
-    name: 'lwio',
+    name: 'lwio' + Math.floor(Math.random()*100),
+    id: Math.floor(Math.random()*100),
     token: 'keke',
   },
 
