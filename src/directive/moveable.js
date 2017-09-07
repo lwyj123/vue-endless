@@ -1,12 +1,4 @@
-let event = {
-  mousemove: function(e) {
-    console.log(moveElemOriginTop, e.pageY ,originY)
-    moveElem.style.top = moveElemOriginTop + e.pageY - originY;
-    moveElem.style.left = moveElemOriginLeft + e.pageX - originX;
-  }
-}
-
-
+import throttle from 'utils/function'
 
 export default function(el, binding){
   console.log(el)
