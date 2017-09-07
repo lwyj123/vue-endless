@@ -71,11 +71,12 @@ export default {
     },
   },
   watch:{
+    // OPTIMIZATION: auto scroll only in bottom
+    // auto scroll the chatlog
     chatlog: function(){
      this.$nextTick(() => {
-       var container = this.$el.querySelector("li:last-child");
-       console.log(container);
-       container.scrollIntoView();
+       var lastLi = this.$el.querySelector("li:last-child");
+       lastLi.scrollIntoView();
      })
     }
   },
