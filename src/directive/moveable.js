@@ -13,15 +13,16 @@ export default function(el, binding){
     let event = {
       mousemove: function(e) {
         console.log(moveElemOriginTop, e.pageY ,originY)
-        moveElem.style.top = (moveElemOriginTop + e.pageY - originY) + 'px';
-        moveElem.style.left = (moveElemOriginLeft + e.pageX - originX) + 'px';
+        moveElem.style.top = (moveElemOriginTop + e.pageY/2 - originY/2) + 'px';
+        moveElem.style.left = (moveElemOriginLeft + e.pageX/2 - originX/2) + 'px';
       }
     }
+    let mousemove = throttle(event.mousemove, 100)
     console.log('mousedown')
     // TODO: use throtte
-    document.addEventListener('mousemove', event.mousemove)
+    document.addEventListener('mousemove', mousemove)
     document.addEventListener('mouseup', e => {
-      document.removeEventListener('mousemove', event.mousemove)
+      document.removeEventListener('mousemove', mousemove)
     })
   }, false);
 }

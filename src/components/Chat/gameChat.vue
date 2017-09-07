@@ -1,6 +1,6 @@
 <template>
   <div class="game-chat">
-    <header v-moveable="'.game-chat'"></header>
+    <header class="moveable" v-moveable="'.game-chat'"></header>
     <div class="chat-window"></div>
     <div class="chat-input">
       <input>
