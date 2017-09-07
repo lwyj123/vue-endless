@@ -4,7 +4,7 @@
       <h1>Game Chat</h1>
     </header>
     <div class="chat-window">
-      <ul class="messages">
+      <ul ref="messages" class="messages">
         <li v-for="(item, index) in chatlog"
             :class="{me: false}">
           <div class="name">{{ item.user && item.user.id || 'lwio' }}</div>
@@ -41,7 +41,7 @@ export default {
         type: 'message',
         content: 'fvck',
       })
-    }, 5000)
+    }, 2000)
   },
   computed:{
     ...mapGetters([
@@ -70,6 +70,15 @@ export default {
       this.chatlog.push(message);
     },
   },
+  watch:{
+    chatlog: function(){
+     this.$nextTick(() => {
+       var container = this.$el.querySelector("li:last-child");
+       console.log(container);
+       container.scrollIntoView();
+     })
+    }
+  },
 }
 </script>
 
@@ -93,6 +102,7 @@ export default {
   }
   .chat-window {
     flex: 0 0 100px;
+    overflow: scroll;
     background: #252830;
   }
   .chat-input {
