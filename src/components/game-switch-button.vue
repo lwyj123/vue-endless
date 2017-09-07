@@ -28,6 +28,7 @@
     border-radius: 20px;
     border: 1px solid #e6e6e6;
     position: relative;
+    transition: background 0.3s ease-in-out;
 
     .button{
       display: inline-block;
@@ -39,6 +40,28 @@
       box-shadow: 0px 2px 2px rgba(0,0,0,.3);
       top: 0px;
       z-index: 5;
+      &:before {
+        content: '';
+        position: absolute;
+        background: #207bb7;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        background: white;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
     }
   }
 

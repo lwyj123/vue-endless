@@ -1,7 +1,7 @@
 <template>
   <div class="game-slider" ref="main" @mousedown="moveStart">
-    <div class="selected" ref="selected"></div><!--
-    --><div class="slider" ref="slider"></div>
+    <div class="selected" ref="selected"></div>
+    <div class="slider" ref="slider"></div>
   </div>
 </template>
 

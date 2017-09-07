@@ -21,8 +21,8 @@ export default {
     return {
       menu : [
         ['出征', 'Fight', '/map', require('assets/menu-fight.png')],
-        ['锻造', 'Equip', '/smithy', require('assets/menu-forge.png')],
-        ['商店', 'Shop', '/shop', require('assets/menu-shop.png')],
+        // ['锻造', 'Equip', '/smithy', require('assets/menu-forge.png')],
+        // ['商店', 'Shop', '/shop', require('assets/menu-shop.png')],
         ['设置', 'Option', '/config', require('assets/menu-setting.png')],
       ]
     }

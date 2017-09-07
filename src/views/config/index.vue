@@ -45,9 +45,9 @@
 </template>
 
 <script>
-import GameSwitchButton from './game-switch-button.vue';
-import GameRangeSelect from './game-range-select.vue';
-import GameHotKeyItem from './game-hot-key-item.vue';
+import GameSwitchButton from 'components/game-switch-button.vue';
+import GameRangeSelect from 'components/game-range-select.vue';
+import GameHotKeyItem from 'components/game-hot-key-item.vue';
 import {SaveGame,LoadGame} from "utils/save-load"
 
 export default {

@@ -6,7 +6,7 @@ import GameFight from 'components/game-fight.vue'
 import GameMap from 'views/gameMap/game-map.vue'
 import GameMapActive from 'views/gameMap/game-map-active.vue'
 import GameLogin from './components/game-login.vue'
-import GameConfig from './components/game-config.vue'
+import GameConfig from 'views/config'
 import GameSmithy from './components/game-smithy.vue'
 import GameShop from './components/game-shop.vue'
 
