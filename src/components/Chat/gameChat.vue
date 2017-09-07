@@ -4,7 +4,13 @@
       <h1>Game Chat</h1>
     </header>
     <div class="chat-window">
-      <p v-for="(item, index) in chatlog">{{ item.content }}</p>
+      <ul class="messages">
+        <li v-for="(item, index) in chatlog"
+            :class="{me: false}">
+          <div class="name">{{ item.user && item.user.id || 'lwio' }}</div>
+          <span>{{ item.content }}</span>
+        </li>
+      </ul>
     </div>
     <div class="chat-input">
       <input>
@@ -27,6 +33,15 @@ export default {
     return {
       chatlog: [],
     }
+  },
+  created() {
+    var self = this;
+    setInterval(function() {
+      self.chatlog.push({
+        type: 'message',
+        content: 'fvck',
+      })
+    }, 5000)
   },
   computed:{
     ...mapGetters([
@@ -91,6 +106,28 @@ export default {
     button {
       width: 50px;
     }
+  }
+}
+
+ul.messages {
+  li {
+    margin-bottom: 10px;
+    .name {
+      margin-bottom: 5px;
+
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    span {
+      border-radius: 5px;
+      background: #E0EDFF;
+      padding: 5px 12px;
+      font-size: 15px;
+    }
+  }
+  li.me {
+
   }
 }
 
