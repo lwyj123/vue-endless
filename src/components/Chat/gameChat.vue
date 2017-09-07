@@ -13,8 +13,8 @@
       </ul>
     </div>
     <div class="chat-input">
-      <input>
-      <button>Send</button>
+      <input v-model="content">
+      <button @click="sendChatMessage">Send</button>
     </div>
   </div>
 </template>
@@ -32,6 +32,7 @@ export default {
   data() {
     return {
       chatlog: [],
+      content: '',
     }
   },
   created() {
@@ -49,6 +50,18 @@ export default {
     ]),
   },
   methods : {
+    sendChatMessage: function() {
+      var self = this;
+      this.$socket.emit('message', {
+        type: 'message',
+        content: self.content,
+      })
+      this.chatlog.push({
+        type: 'message',
+        content: self.content,
+      }) 
+      this.content = '';
+    }
   },
   sockets:{
     connect: function(){
