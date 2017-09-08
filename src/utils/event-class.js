@@ -170,12 +170,11 @@ const MapDialog = function(event, callback){
 }
 
 const MapFight = function(opt){
-
   let data = {
     monsters: [ new Unit(opt) ]
   };
   
-  store.state.FightStore.monsters = data.monsters;
+  store.state.fight.monsters = data.monsters;
 
   // 跳转到 战斗场景;
   location.href = "#/fight"

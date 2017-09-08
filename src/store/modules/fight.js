@@ -1,4 +1,5 @@
 import Unit from 'utils/unit-class'
+import Vue from 'vue'
 import MONSTER_DATA from 'data/monster-data';
 
 const fight = {

@@ -1,5 +1,5 @@
 # planning
-1. new random dungon-creater
+1. modified the fight system
 2. use ddecorator for monster's prename
 
 # feature
@@ -9,3 +9,4 @@
 4. delete `css` folder and add the style into `styles` folder
 5. optimize chatlog scroll
 6. connect the socketIO server only when gameChat mounted.
+7. new random dungon-creater
