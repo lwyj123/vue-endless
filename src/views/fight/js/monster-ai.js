@@ -1,5 +1,5 @@
-import Fight from './fight';
-import SkillAvailable from './skill-available';
+import Fight from './fight.js';
+import SkillAvailable from 'utils/skill-available.js';
 
 const MonsterAI = function(hero, monster){
   

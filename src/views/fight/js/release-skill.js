@@ -1,6 +1,6 @@
 import coolTimeEvent from './cool-time-event'
-import Fight from 'utils/fight'
-import store from '../store'
+import Fight from './fight'
+import store from '$store/index.js'
 
 const SkillEvent = function(hero, monster){
   this.hero = hero;
@@ -15,14 +15,14 @@ SkillEvent.prototype = {
     this.keyDownFunc = event => { 
       let index;
       // 技能监听;
-      let skillHotKey = store.state.ConfigStore.skillHotKey;
+      let skillHotKey = store.state.config.skillHotKey;
       index = skillHotKey.indexOf(event.keyCode);
       if(~index){
         let skill = this.hero.$skills[index];
         skill && Fight(this.hero, this.monster, skill);
       }
       // 物品监听;
-      let itemHotKey = store.state.ConfigStore.itemHotKey;
+      let itemHotKey = store.state.config.itemHotKey;
       index = itemHotKey.indexOf(event.keyCode);
       if(~index){
         console.log('Use: $package',index);

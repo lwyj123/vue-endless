@@ -7,7 +7,7 @@ import CreateMonster from './create/create-monster';
 import CreateHero from './create/create-hero';
 import { GetRange, GetRandom } from './public-random-range';
 import PGET from 'utils/public-static-get';
-import coolTimeEvent from './cool-time-event';
+// import coolTimeEvent from './cool-time-event';
 import Vue from 'vue';
 
 // prototype
@@ -560,7 +560,7 @@ function use(option){
   if(--item.num < 1){
     container[option.index] = undefined;
   }else{
-    coolTimeEvent.call(item);
+    //coolTimeEvent.call(item);
   }
 
 }

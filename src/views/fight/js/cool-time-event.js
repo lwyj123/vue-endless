@@ -1,4 +1,4 @@
-import store from '../store';
+import store from '$store/index.js';
 
 const coolTimeEvent = function(currentCoolTime){
 

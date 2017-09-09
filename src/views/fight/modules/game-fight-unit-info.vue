@@ -25,9 +25,9 @@
 </template>
 
 <script>
-import GameProgress from './game-progress.vue'
-import GameSkillItem from './game-skill-item.vue'
-import GameStateItem from './game-state-item.vue'
+import GameProgress from 'components/game-progress.vue'
+import GameSkillItem from 'components/game-skill-item.vue'
+import GameStateItem from 'components/game-state-item.vue'
 
 export default {
   components:{

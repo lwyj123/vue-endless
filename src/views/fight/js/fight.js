@@ -1,9 +1,9 @@
 import coolTimeEvent from './cool-time-event'
-import actionClass from './fight-action-class'
-import SkillAvailable from './skill-available'
-import { GetRange, GetRandom } from './public-random-range';
-import GameAudio from './audio'
-import store from '../store';
+import actionClass from 'utils/fight-action-class'
+import SkillAvailable from 'utils/skill-available'
+import { GetRange, GetRandom } from 'utils/public-random-range';
+import GameAudio from 'utils/audio'
+import store from '$store';
 
 const Fight = (attacker, enemy, skill) => {
 
