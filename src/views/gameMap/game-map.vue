@@ -74,7 +74,7 @@ export default {
          text-align: center;
          width: 260px;
          font-size: 30px;
-         transition: width 0.3s;
+         transition: all 0.3s;
        }
        .level{
          display: none;
@@ -92,7 +92,6 @@ export default {
          display: inline-block;
          text-align: center;
          font-size: 18px;
-         width: 60px;
        }
        .dsc{
          margin-left: 10px;
