@@ -96,7 +96,7 @@ const LoadGame = function(){
 
     var hero = new Unit(
       {
-        $showName : 'Bastarder',
+        $showName : 'lwio2',
         $type    : 'Hero',
         $skills  : [PGET(1000001),PGET(1000002),PGET(1000003),PGET(1000004)],
         $status  : [],

@@ -1,10 +1,10 @@
 const DungeonCreater = function(opt) {
   // Dict
-  this.$BLOCK_STICK = '2';  // 障碍
-  this.$BLOCK_ROAD  = '0';  // 可行走
-  this.$BLOCK_PATH  = '4';  // 路径
-  this.$BLOCK_HERO  = '1';  // 英雄
-  this.$BLOCK_END   = '3';  // 寻路终点
+  this.$BLOCK_STICK = 'X';  // 障碍
+  this.$BLOCK_ROAD  = 'O';  // 可行走
+  this.$BLOCK_PATH  = '#';  // 路径
+  this.$BLOCK_HERO  = '@';  // 英雄
+  this.$BLOCK_END   = 'e';  // 寻路终点
 
   // Create
   this.row = opt.row || 20;

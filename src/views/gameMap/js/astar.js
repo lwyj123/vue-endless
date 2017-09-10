@@ -14,7 +14,7 @@ const Astar = function Astar(map, start, end) {
     var opt = {
       startBlock : start,
       endBlock   : end,
-      stickList  : _.filter(_.flattenDeep(this.map.mapData) ,{ block_type: '2'}),
+      stickList  : _.filter(_.flattenDeep(this.map.mapData) ,{ block_type: 'X'}),
       openList   : [],
       closeList  : [],
       isInList : function(block, type) {
@@ -22,9 +22,10 @@ const Astar = function Astar(map, start, end) {
           x:block.x,
           y:block.y
         })
-        return ~index && { index }
+        return index !== -1 && { index }
       }
     }
+    console.log(this.map)
     _.assign(this.map, opt)
 
     this.map.openList.push(this.map.startBlock);
@@ -44,9 +45,11 @@ const Astar = function Astar(map, start, end) {
     return path;
   }
   this.step = function() {
+    // sort for get least f
     this.map.openList = this.map.openList.sort(function(a, b) {
       return a.getF() - b.getF();
     })
+    // get a block from Open List
     var currentBlock = this.map.openList.shift();
     if (!currentBlock) {
       return {

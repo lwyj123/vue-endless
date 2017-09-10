@@ -1,10 +1,10 @@
 const CONSTANT = {
   MAP_BLOCK_TYPE:{
-    STICK : '2',  // 障碍
-    ROAD  : '0',  // 可行走
-    PATH  : '4',  // 路径
-    HERO  : '1',  // 英雄
-    END   : '3'  // 寻路终点
+    STICK : 'X',  // 障碍
+    ROAD  : 'O',  // 可行走
+    PATH  : '#',  // 路径
+    HERO  : '@',  // 英雄
+    END   : 'E'  // 寻路终点
   },
   EQUIP_ID :[
     "武器", "护肩", "鞋子", "腰带", "上衣", "绑腿", "戒指", "项链", "手镯",

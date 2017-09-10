@@ -31,11 +31,10 @@
       },
       blockClass() {
         let block = this.block;
-        let typeList = ['road', 'hero', 'stick', 'end'];
+        let typeList = {'O': 'road', '@': 'hero', 'X': 'stick', 'E':'end'};
         let classList = ['map-block'];
         let stick = CONSTANT.MAP_BLOCK_TYPE.STICK;
-
-        classList.push(typeList[Number(block.block_type)] || '');
+        classList.push(typeList[block.block_type] || '');
 
         block.event && classList.push(block.event.event_type);
 

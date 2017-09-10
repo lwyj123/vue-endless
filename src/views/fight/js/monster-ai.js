@@ -21,6 +21,7 @@ const MonsterAI = function(hero, monster){
     this.startTimer && clearInterval(this.startTimer);
   };
 
+  // normalAI: just use skill if available
   this.normalAi = function (){
     let skills = this.monster.$skills;
     for(let i = 0; i< skills.length; i++){

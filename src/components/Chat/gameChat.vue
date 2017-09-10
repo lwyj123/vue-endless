@@ -1,7 +1,8 @@
 <template>
-  <div class="game-chat">
+  <div class="game-chat"
+       @keydown.enter="sendChatMessage">
     <header class="moveable" v-moveable="'.game-chat'">
-      <h1>Game Chat</h1>
+      <h1>Game Chat(Test)</h1>
     </header>
     <div class="chat-window">
       <ul ref="messages" class="messages">
@@ -53,6 +54,9 @@ export default {
   methods : {
     sendChatMessage: function() {
       var self = this;
+      if(this.messageInput === '') {
+        return;
+      }
       this.$socket.emit('message', {
         type: 'message',
         content: { 

@@ -43,8 +43,8 @@
 </template>
 
 <script>
-import Astar from 'utils/astar'
-import HeroMoveEvent from 'utils/map-hero-move'
+import Astar from './js/astar'
+import HeroMoveEvent from './js/map-hero-move'
 import Menu from 'components/Menu/game-home-menu.vue'
 import Info from 'components/Info/game-home-info.vue'
 import MapBlock from './game-map-block.vue'

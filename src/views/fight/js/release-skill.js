@@ -17,14 +17,14 @@ SkillEvent.prototype = {
       // 技能监听;
       let skillHotKey = store.state.config.skillHotKey;
       index = skillHotKey.indexOf(event.keyCode);
-      if(~index){
+      if(index !== -1){
         let skill = this.hero.$skills[index];
         skill && Fight(this.hero, this.monster, skill);
       }
       // 物品监听;
       let itemHotKey = store.state.config.itemHotKey;
       index = itemHotKey.indexOf(event.keyCode);
-      if(~index){
+      if(index !== -1){
         console.log('Use: $package',index);
         this.hero.use({
           position: '$package',
