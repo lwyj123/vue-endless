@@ -3,7 +3,7 @@
 
     <router-link class="btn backhome" to="/">回家</router-link>
 
-    <transition enter-active-class="animated slideInUp" leave-active-class="animated slideOutDown">
+    <!-- <transition enter-active-class="animated slideInUp" leave-active-class="animated slideOutDown">
       <game-package class="v-package" v-show="opt.info"></game-package>
     </transition>
 
@@ -14,7 +14,7 @@
     <div :class="['show-btn', opt.info ? 'opend' : 'closed']" @click="showInfo">
       <span v-if="opt.info">&lt;</span>
       <span v-else>&gt;</span>
-    </div>
+    </div> -->
 
     <transition enter-active-class="animated slideInLeft slow" leave-active-class="animated slideOutLeft slow">
       <div class="tip" v-if="opt.tip">

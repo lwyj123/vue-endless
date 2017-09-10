@@ -13,9 +13,9 @@
           垃圾箱
         </span>
       </component-item>
-      <div class="btn f-r" @click="sort">
+      <!-- <div class="btn f-r" @click="sort">
         整理
-      </div>
+      </div> -->
     </div>
     <div class="list">
       <template v-for="(item, index) in hero.$package">
