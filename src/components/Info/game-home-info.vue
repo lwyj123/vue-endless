@@ -6,7 +6,7 @@
           <img :src="require('assets/hero-1.png')"/>
           <div class="level">99</div>
         </div>
-        <div class="name">{{ user.name }}</div>
+        <div class="name">{{ hero.$showName }} ({{ user.name }})</div>
       </div>
       <div class="equip">
         <div class="left">
