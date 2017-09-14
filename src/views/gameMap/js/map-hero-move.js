@@ -87,7 +87,8 @@ const HeroMoveEvent = function(map, $VueScope){
     //判断 初始化 执行事件
     switch(event_type){
       case 'Monster':
-        location.href = "#"
+        location.href = "#";
+        break;
         MapFight(event)
         break;
       case 'MapDialog':

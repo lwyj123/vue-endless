@@ -10,3 +10,4 @@
 5. optimize chatlog scroll
 6. connect the socketIO server only when gameChat mounted.
 7. new random dungon-creater
+8. add iconfont

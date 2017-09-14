@@ -18,12 +18,20 @@
 
     <transition enter-active-class="animated slideInLeft slow" leave-active-class="animated slideOutLeft slow">
       <div class="tip" v-if="opt.tip">
-        <span class="map-name">{{map.$opt.name}}</span>
-        <div>
-          <span class="tip-block FEvent">战斗</span>
-          <span class="tip-block DEvent">事件</span>
-          <span class="tip-block hero">英雄</span>
-        </div>
+        <section>
+          <span class="map-name">{{map.$opt.name}}</span>
+          <div>
+            <span class="tip-block FEvent">战斗</span>
+            <span class="tip-block DEvent">事件</span>
+            <span class="tip-block hero">英雄</span>
+          </div>
+        </section>
+        <section id="move-tutorial">
+          <span>移动操作</span>
+          <div>
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505383422504&di=51d4e607724c8757d9fa9d4253bf3342&imgtype=0&src=http%3A%2F%2Fwww.443w.com%2F1234%2Fcontent%2Fuploadfile%2F201408%2Ff3cc1408373880.jpg">
+          </div>
+        </section>
       </div>
     </transition>
 
@@ -73,7 +81,7 @@ export default {
     this.moveEvent = new HeroMoveEvent(this.map, this);
     setTimeout(() => {
       this.$delete(this.opt, 'tip')
-    }, 5000);
+    }, 50000);
   },
   mounted(){
     this.autoPisition();
@@ -164,10 +172,19 @@ export default {
       left: 0px;
       z-index: 10;
       width: 150px;
-      height: 70px;
       padding: 6px;
       border-bottom-right-radius: 4px;
       background: rgba(0,0,0,0.4);
+      section {
+        &:not(:first-child) {
+          margin-top: 10px;
+        }
+        &#move-tutorial {
+          img {
+            width: 100px;
+          }
+        }
+      }
       .tip-block{
         display: inline-block;
         width: 30px;
