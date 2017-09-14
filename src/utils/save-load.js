@@ -101,11 +101,11 @@ const LoadGame = function(){
         $skills  : [PGET(1000001),PGET(1000002),PGET(1000003),PGET(1000004)],
         $status  : [],
         $resource : {
-          gold: 999999999,
-          gem : 899999
+          gold: 100,
+          gem : 20
         },
         $blueprint: [
-          4000001, 4000002
+          // 4000001, 4000002
         ],
         $package : [test1,test2].concat(_.cloneDeep(ITEM_TABLE).slice(2)).concat(new Array(26))
       }

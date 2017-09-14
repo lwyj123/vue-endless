@@ -4,7 +4,7 @@
       <div class="main">
         <div class="logo">
           <img :src="require('assets/hero-1.png')"/>
-          <div class="level">99</div>
+          <div class="level">{{ hero.$level }}</div>
         </div>
         <div class="name">{{ hero.$showName }} ({{ user.name }})</div>
       </div>
