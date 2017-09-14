@@ -1,6 +1,7 @@
 # planning
 1. modified the fight system
 2. use ddecorator for monster's prename
+3. use inherit for unit,hero and monster.
 
 # feature
 1. refactor the structure of project.

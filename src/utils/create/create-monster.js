@@ -1,5 +1,6 @@
 // TODO: needed to be modified 
 import PublicStaticGet from './../public-static-get'
+import getRandomWithChance from 'utils/random/getRandomWithChance'
 
 const CreateMonster = function(opt = {}){
 
